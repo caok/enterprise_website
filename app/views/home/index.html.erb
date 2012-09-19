@@ -1,0 +1,67 @@
+<% if @company -%>
+  <div class="hero-unit">
+    <ul class="rslides">
+      <% @company.attachments.each do |attachment| -%>
+        <li><%= image_tag(attachment.attachment.url) %></li>
+      <% end -%>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>关于我们</h2>
+      <address>
+        <strong>地址:  </strong><%= @company.try :address %><br>
+        <strong>电话:  </strong><%= @company.try :tel %><br>
+        <strong>手机:  </strong><%= @company.try :mobile %><br>
+        <strong>传真:  </strong><%= @company.try :fax %><br>
+        <strong> QQ :  </strong><%= @company.try :qq %><br>
+        <strong>电邮:  </strong><%= @company.try :email %><br>
+      </address>
+      <p><a class="btn" href="<%= @company %>">更多 &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <h2>产品推荐</h2>
+      <% @products.each do |product| %>
+        <p><%= truncate(product.about, :length => 27) %></p>
+      <% end %>
+      <p><a class="btn" href="<%= products_path %>">更多 &raquo;</a></p>
+   </div>
+    <div class="span4">
+      <h2>合作伙伴</h2>
+      <% @customers.each do |customer| %>
+        <p><%= truncate(customer.about, :length => 27) %></p>
+      <% end %>
+      <p><a class="btn" href="<%= customers_path %>">更多 &raquo;</a></p>
+    </div>
+  </div>
+<% else -%>
+  <div class="hero-unit">
+    <h2 style='text-align: center'>初始化企业网站</h2>
+    <% if can? :manage, Company -%>
+    <%= link_to "追加企业信息",
+                new_company_path,
+                :class => 'btn btn-primary' %>
+    <% end -%>
+  </div>
+<% end -%>
+
+<script type="text/javascript">
+  $(".rslides").responsiveSlides({
+    auto: true,             // Boolean: Animate automatically, true or false
+    speed: 1000,            // Integer: Speed of the transition, in milliseconds
+    timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+    pager: true,           // Boolean: Show pager, true or false
+    nav: false,             // Boolean: Show navigation, true or false
+    random: false,          // Boolean: Randomize the order of the slides, true or false
+    pause: false,           // Boolean: Pause on hover, true or false
+    pauseControls: false,   // Boolean: Pause when hovering controls, true or false
+    prevText: "Previous",   // String: Text for the "previous" button
+    nextText: "Next",       // String: Text for the "next" button
+    maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+    controls: "",           // Selector: Where controls should be appended to, default is after the 'ul'
+    namespace: "rslides",   // String: change the default namespace used
+    before: function(){},   // Function: Before callback
+    after: function(){}     // Function: After callback
+  });
+</script>

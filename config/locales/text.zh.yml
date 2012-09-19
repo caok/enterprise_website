@@ -1,0 +1,78 @@
+zh:
+  system_name: 星云
+  login: 登录
+  logout: 退出
+
+  views:
+    pagination:
+      previous: "前一页"
+      next: "后一页"
+      first: "首页"
+      last: "末页"
+      truncate: "..."
+    actions: "操作"
+    are_you_sure: "您确定吗？"
+    text:
+      are_you_sure: "您确定吗？"
+
+  label:
+    remember_me: 保持登录状态
+
+  button:
+    login: 登录
+    logout: 退出
+    checkout: 校验
+
+  link:
+    grant_permission: 授予权限
+    new: 新建
+    detail: 详情
+    edit: 编辑
+    delete: 删除
+    destroy: 删除
+    index: 清单
+    show: 显示
+    back: 返回
+    ancel: 取消
+
+  devise:
+    sessions:
+      new:
+        title: 登录系统
+
+  products:
+    index:
+      title: 产品介绍
+    new:
+      title: 新建产品
+    edit:
+      title: 编辑产品
+    show:
+      title: 产品详情
+  customers:
+    index:
+      title: 合作伙伴
+    new:
+      title: 新建合作伙伴
+    edit:
+      title: 编辑合作伙伴
+    show:
+      title: 合作伙伴详情
+  companies:
+    index:
+      title: 企业
+    new:
+      title: 创建企业信息
+    edit:
+      title: 编辑企业信息
+    show:
+      title: 企业详情
+  categories:
+    index:
+      title: 类别清单
+    new:
+      title: 新建类别
+    edit:
+      title: 编辑类别
+    show:
+      title: 类别详情

@@ -1,0 +1,12 @@
+<% if target.errors.any? %>
+  <div class="alert alert-block alert-error">
+    <h4>提交的内容有<%= target.errors.size %>个错误,请修改后重新提交。</h4>
+    <br>
+
+    <ul>
+    <% target.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

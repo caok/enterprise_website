@@ -1,0 +1,58 @@
+<% unless @product.new_record?() -%>
+  <% if @product.attachments.size > 0 -%>
+    <% @product.attachments.each do |attachment| -%>
+      <div class="thumbnail span5">
+        <%= link_to image_tag(attachment.attachment.url), attachment.attachment.url %>
+        <p><%= format_pic_url attachment.attachment.url %></p>
+        <div class='caption'>
+          <p>
+            <%= button_to "删除附件",
+                        remove_attachment_product_path(@product, :attachment => attachment),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-mini btn-danger' %>
+          </p>
+        </div>
+      </div>
+    <% end-%>
+  <% end -%>
+
+  <%= form_for @product, :url => add_attachment_products_path, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+    <%= f.hidden_field :id, :value => @product.id %>
+    <div class="control-group">
+      <%= f.label :file, :class => 'control-label' %>
+      <div class="controls">
+        <%= file_field_tag :file, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  products_path, :class => 'btn' %>
+    </div>
+  <% end -%>
+<% end -%>
+
+<%= form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :target => @product %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'span9' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('link.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
+  </div>
+<% end %>
+

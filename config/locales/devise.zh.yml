@@ -1,0 +1,22 @@
+zh:
+  errors:
+    messages:
+      not_found: "没有发现"
+      already_confirmed: "已经确认"
+      not_locked: "未锁定"
+      not_saved: "没有保存"
+  devise:
+    failure:
+      invalid: '账户名或者密码错误！'
+      unauthenticated: '您需要登录或注册，然后再继续。'
+      unconfirmed: '您必须确认您的帐户，然后再继续。'
+      locked: '您的帐户已被锁定。'
+      inactive: '你的账户还没有激活。'
+      already_authenticated: "已经通过验证。"
+    sessions:
+      signed_in: '登录成功。'
+      signed_out: '成功退出。'
+    registrations:
+      signed_up: '您已经注册成功！'
+      updated: "您成功更新了您的账户信息。"
+      destroyed: "您的账户已经被成功删除。"

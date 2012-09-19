@@ -1,0 +1,51 @@
+<% if @com_info %>
+  <h2 style='text-align: center'><%= link_to @com_info.name, @com_info %></h2>
+  <div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#lA">公司简介</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#lB">企业文化</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#lC">联系方式</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="lA" class="tab-pane active">
+        <div class="hero-unit">
+          <h3>公司简介</h3>
+          <%= markdown @com_info.about %>
+        </div>
+      </div>
+      <div id="lB" class="tab-pane ">
+        <div class="hero-unit">
+          <h3>企业文化</h3>
+          <%= markdown @com_info.culture %>
+        </div>
+      </div>
+      <div id="lC" class="tab-pane">
+        <div class="hero-unit">
+          <h3>联系方式</h3>
+          <address>
+            <strong>联系人:  </strong><%= @com_info.try :contract %><br>
+            <strong>地址:  </strong><%= @com_info.try :address %><br>
+            <strong>电话:  </strong><%= @com_info.try :tel %><br>
+            <strong>手机:  </strong><%= @com_info.try :mobile %><br>
+            <strong>传真:  </strong><%= @com_info.try :fax %><br>
+            <strong> QQ :  </strong><%= @com_info.try :qq %><br>
+            <strong>Email:  </strong><%= @com_info.try :email %><br>
+            <strong>友情链接:  </strong><%= @com_info.try :links %><br>
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else -%>
+  <% if can? :manage, Company -%>
+  <%= link_to t('link.new', :default => t("helpers.links.new")),
+              new_company_path,
+              :class => 'btn btn-primary' %>
+  <% end -%>
+<% end -%>

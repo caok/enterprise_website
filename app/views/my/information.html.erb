@@ -1,0 +1,18 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h2>个人信息</h2>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @user.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @user.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:loginable) %>:</strong></dt>
+  <dd><%= User::LOGINABLE_TYPES[@user.loginable] %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_sign_in_at) %>:</strong></dt>
+  <dd><%= @user.last_sign_in_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_sign_in_ip) %>:</strong></dt>
+  <dd><%= @user.last_sign_in_ip %></dd>
+</dl>
+

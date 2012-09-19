@@ -1,0 +1,75 @@
+<%= form_for @company, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :target => @company %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contract, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contract, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mobile, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tel, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tel, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fax, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fax, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :qq, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :qq, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :links, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :links, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :about, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :about, :class => 'span9' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :culture, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :culture, :class => 'span9' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('link.cancel', :default => t("helpers.links.cancel")),
+                companies_path, :class => 'btn' %>
+  </div>
+<% end %>

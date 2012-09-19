@@ -1,0 +1,32 @@
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+<% if Product.all.size > 0 -%>
+  <div class='row-fluid'>
+    <div class='span3'>
+      <ul class="nav nav-tabs nav-stacked">
+        <% Product.all.each do |product| -%>
+          <li class='<%= 'active' if params[:product_id] == product.id.to_s %>'>
+            <%= link_to product.try(:name), products_path(:product_id => product) %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+
+    <div class='span9'>
+      <div class="hero-unit">
+        <% @product ||= @products.first -%>
+        <h3 style='text-align: center'><%= link_to @product.try(:name), @product %></h3>
+        <%= markdown @product.try(:description) %>
+      </div>
+    </div>
+  </div>
+<% end -%>
+
+<%- if can? :create, Product -%>
+<%= link_to t('link.new', :default => t("helpers.links.new")),
+            new_product_path,
+            :class => 'btn btn-primary' %>
+<%- end -%>

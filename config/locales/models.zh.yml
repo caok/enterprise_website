@@ -1,0 +1,59 @@
+zh:
+  activerecord:
+    models:
+      user: 管理员
+      product: 产品
+      customer: 合作伙伴
+      company: 企业
+      category: 类别
+
+    attributes:
+      user:
+        name: "名称"
+        tel: "公司电话号码"
+        mobile: "手机号码"
+        address: "公司地址"
+        email: "邮箱"
+        description: "描述"
+        loginable: "允许登录"
+        password: "密码"
+        password_confirmation: "确认密码"
+        current_password: "当前密码"
+        last_sign_in_at: "上次登录时间"
+        last_sign_in_ip: "上次登录IP"
+        created_at: "创建时间"
+        updated_at: "更新时间"
+        current_sign_in_ip: "当前登录IP"
+        sign_in_count: "登录次数"
+        current_sign_in_at: "当前登录时间"
+      product:
+        name: "产品名称"
+        description: "产品描述"
+        created_at: "创建时间"
+        updated_at: "更新时间"
+      customer:
+        name: "客户名称"
+        description: "客户描述"
+        category_id: "行业类别"
+        created_at: "创建时间"
+        updated_at: "更新时间"
+      company:
+        name: "公司名称"
+        tel: "固话"
+        mobile: "手机"
+        fax: "传真"
+        qq: "QQ"
+        email: "邮箱"
+        links: "友情链接"
+        address: "地址"
+        about: "公司简介"
+        culture: "企业文化"
+        contract: "联系人"
+        email: "邮箱"
+        description: "描述"
+        created_at: "创建时间"
+        updated_at: "更新时间"
+      category:
+        name: "名称"
+        created_at: "创建时间"
+        updated_at: "更新时间"

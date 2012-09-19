@@ -1,0 +1,34 @@
+zh:
+  views:
+    pagination:
+      previous: "前一页"
+      next: "后一页"
+      first: "首页"
+      last: "末页"
+      truncate: "..."
+    table:
+      operation: "操作"
+    text:
+      are_you_sure: "您确定吗？"
+  link:
+    new: "追加"
+    edit: "编辑"
+    show: "详情"
+    destroy: "删除"
+    cancel: "取消"
+    back: "返回"
+  flash:
+    actions:
+      create:
+        notice: "追加成功。"
+        alert: "追加失败。"
+      update:
+        notice: "更新成功。"
+      destory:
+        notice: "删除成功。"
+        alert: "删除失败。"
+    users:
+      authorization_success:
+        notice: "授权成功。"
+      authorization_failed:
+        notice: "授权失败。"

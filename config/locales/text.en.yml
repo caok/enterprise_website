@@ -1,0 +1,38 @@
+en:
+  system_name: website_name
+
+  label:
+    remember_me: Remember me
+
+  button:
+    login: Login
+    logout: Logout
+
+  link:
+    add_result: Add Result
+
+  devise:
+    sessions:
+      new:
+        title: Login System
+  charts:
+    show:
+      title: details of chart
+    new:
+      title: add chart
+    edit:
+      title: edit chart
+    index:
+      title: listing charts
+
+  users:
+    edit:
+      title: edit user
+    index:
+      title: listing users
+    new:
+      title: add user
+    show:
+      title: user details of user
+    set_roles:
+      title: set roles

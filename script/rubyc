@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 1 ]; then
+  echo  Usage: compile ruby file to java class files in dir...
+  echo "       $0 dir1 dir2 ... "
+  echo
+  echo  Usage: remove java class files in dir...
+  echo "       $0 clean dir1 dir2 ... "
+  exit 1
+fi
+
+if [ $1 == "clean" ]; then
+  shift
+  find $* -type f -name "*.class" | xargs rm
+  exit
+fi
+
+# create java class files
+find $* -type f -name "*.rb" | xargs jrubyc
+
+# replace ruby files
+find $* -type f -name "*.rb" | while read file
+do
+  echo "require __FILE__.sub(/\\.rb/, '.class')" > $file
+done
